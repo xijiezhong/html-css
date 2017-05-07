@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Brands List</title>
+	<style type="text/css">
+		a{
+			text-decoration: none;
+			margin-left:50px;
+			display: inline-block;
+			color:black;
+		}
+		a:hover{
+			color:red;
+		}
+		ul{
+			list-style-type:none;
+		}
+		.container{
+			width: 500px;
+			height: 300px;
+			overflow:hidden;
+			border: 1px solid red;
+		}
+		.showOrHide{
+			text-align: center;
+
+			margin:0 auto;
+		}
+		.hidden{
+			display: none;
+
+		}
+	</style>
+	<script src= "C:\Users\xbz\Desktop\daily test\jquery-3.2.1.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="container">
+	<div class="textButton">
+		<ul>
+			<li>
+				<a href="#none">理光(3680)</a>
+				<a href="#none">奥林巴斯(13680)</a>
+				<a href="#none">铭记(1680)</a>
+			</li>
+			<li>
+				<a href="#none">三洋(3680)</a>
+				<a href="#none">拍得丽(3680)</a>
+				<a href="#none">德之杰(3680)</a>
+			</li>
+			<li>
+				<a href="#none">理光(3680)</a>
+				<a href="#none">理光(3680)</a>
+				<a href="#none">理光(3680)</a>
+			</li>
+			<li class = "hidden">
+				<a href="#none">理光(3680)</a>
+				<a href="#none">理光(3680)</a>
+				<a href="#none">理光(3680)</a>
+			</li>
+			<li class = "hidden">
+				<a href="#none">理光(3680)</a>
+				<a href="#none">理光(3680)</a>
+				<a href="#none">理光(3680)</a>
+			</li>
+		</ul>
+	</div>
+	<div class = "showOrHide">
+		<input type="button" name="show" value="显示全部品牌" /><br /><input type="button" name="hide" value="精简显示品牌" class="hidden" />
+	</div>
+	</div>
+	<script>
+	// 原生js
+	// 	功能：点击按钮展开品牌列表，并高亮显示某些品牌，再次点击按钮回收列表。
+		var btns = document.getElementsByTagName("input"),
+		    btnShow = btns[0],
+
+		    btnHide = btns[1],
+		    hiddenItems = document.getElementsByClassName("hidden");
+		    links =document.getElementsByTagName("a");
+
+		btnShow.addEventListener("click",function(){
+			for(var i = 0,len = hiddenItems.length;i < len;i++){
+				hiddenItems[i].style.display = "inline";
+		   }
+		   for(var j = 0;j < 3;j++){
+		   	   links[j].style.backgroundColor = "yellow";
+		   }
+			btnShow.style.display = "none";
+		},false);
+		
+		btnHide.addEventListener("click",function(){
+			for(var i = 0,len = hiddenItems.length;i < len;i++){
+				hiddenItems[i].style.display = "none";
+		   }
+   		   for(var j = 0;j < 3;j++){
+		   	   links[j].style.backgroundColor = "white";
+		   }
+			btnShow.style.display = "inline";
+		},false);
+		</script>
+</body>
+</html>
